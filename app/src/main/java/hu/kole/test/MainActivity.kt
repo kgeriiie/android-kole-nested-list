@@ -1,11 +1,11 @@
-package hu.kole.nestedlist
+package hu.kole.test
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import hu.kole.nestedlist.adapter.SectionAdapter
-import hu.kole.nestedlist.databinding.ActivityMainBinding
-import hu.kole.nestedlist.repo.SectionRepository
+import hu.kole.test.adapter.SectionAdapter
+import hu.kole.test.databinding.ActivityMainBinding
+import hu.kole.test.repo.SectionRepository
 
 class MainActivity : AppCompatActivity() {
 

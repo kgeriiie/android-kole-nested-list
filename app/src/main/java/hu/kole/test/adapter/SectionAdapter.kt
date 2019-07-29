@@ -1,4 +1,4 @@
-package hu.kole.nestedlist.adapter
+package hu.kole.test.adapter
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.SimpleItemAnimator
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import hu.kole.nestedlist.BaseNestedListAdapter
 import hu.kole.nestedlist.NestedItemCallback
-import hu.kole.nestedlist.R
-import hu.kole.nestedlist.data.Item
-import hu.kole.nestedlist.data.Section
-import hu.kole.nestedlist.databinding.ViewSectionBinding
+import hu.kole.test.R
+import hu.kole.test.data.Item
+import hu.kole.test.data.Section
+import hu.kole.test.databinding.ViewSectionBinding
 
 class SectionAdapter: BaseNestedListAdapter<Section, Item, BaseNestedListAdapter.BaseNestedViewHolder<Item, Section>>(SectionDiffCallback()) {
     override fun getNestedItems(position: Int): List<Item> {

@@ -1,4 +1,4 @@
-package hu.kole.nestedlist.adapter
+package hu.kole.test.adapter
 
 import android.databinding.DataBindingUtil
 import android.support.v7.recyclerview.extensions.ListAdapter
@@ -6,9 +6,9 @@ import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import hu.kole.nestedlist.R
-import hu.kole.nestedlist.data.Item
-import hu.kole.nestedlist.databinding.ViewItemBinding
+import hu.kole.test.R
+import hu.kole.test.data.Item
+import hu.kole.test.databinding.ViewItemBinding
 
 class ItemAdapter: ListAdapter<Item, ItemViewHolder>(ItemDiffCallback()) {
 

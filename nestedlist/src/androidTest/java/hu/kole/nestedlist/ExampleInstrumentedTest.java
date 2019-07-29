@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("hu.kole.nestedlist.test", appContext.getPackageName());
+        assertEquals("hu.kole.test", appContext.getPackageName());
     }
 }

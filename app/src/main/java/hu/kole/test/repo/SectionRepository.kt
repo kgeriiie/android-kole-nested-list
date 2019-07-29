@@ -1,7 +1,7 @@
-package hu.kole.nestedlist.repo
+package hu.kole.test.repo
 
-import hu.kole.nestedlist.data.Item
-import hu.kole.nestedlist.data.Section
+import hu.kole.test.data.Item
+import hu.kole.test.data.Section
 import kotlin.random.Random
 
 class SectionRepository {

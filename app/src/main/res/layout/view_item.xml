@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="item" type="hu.kole.nestedlist.data.Item"/>
+        <variable name="item" type="hu.kole.test.data.Item"/>
     </data>
 
     <android.support.constraint.ConstraintLayout android:layout_width="140dp"

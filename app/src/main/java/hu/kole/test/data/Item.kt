@@ -1,3 +1,3 @@
-package hu.kole.nestedlist.data
+package hu.kole.test.data
 
 data class Item(val title: String)

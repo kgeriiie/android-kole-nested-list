@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "hu.kole.nestedlist"
+        applicationId "hu.kole.test"
         minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
