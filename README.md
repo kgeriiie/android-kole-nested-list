@@ -1,15 +1,12 @@
 # KoleNestedList
 
 Simple library for handle nested horizontal list in a vertical list.
-You can select day by swiping, tapping on selector. You can customize all essential view on picker. Basically the picker use a default implementation for display dates.
 
 ![How does it look like](https://github.com/kgeriiie/KoleNestedList/blob/master/promo-res/promo.gif)
 
 # Usage
 
-##### Put into the layout resource file
-Include the day cells container in your layout. You can customize (size, color, font) the title of container.
-
+##### Implement your own BaseNestedListAdapter
 You can use it in a regular way. Just create two Adapter, one for sections and one for section items.
 
 For section's adpter:
