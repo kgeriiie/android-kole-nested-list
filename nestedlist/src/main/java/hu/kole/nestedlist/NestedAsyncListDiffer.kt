@@ -3,12 +3,14 @@ package hu.kole.nestedlist
 import android.annotation.SuppressLint
 import android.support.v7.recyclerview.extensions.AsyncDifferConfig.Builder
 import android.support.v7.recyclerview.extensions.AsyncDifferConfig
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.AdapterListUpdateCallback
 import android.support.v7.util.DiffUtil
 import android.support.v7.util.ListUpdateCallback
+import android.util.Log
 import java.util.*
 
-open class NestedAsyncListDiffer<T>(val adapter: BaseNestedListAdapter<T,*, *>, diffCallback: NestedItemCallback<T>) {
+open class NestedAsyncListDiffer<T>(val adapter: ListAdapter<T, *>, diffCallback: DiffUtil.ItemCallback<T>) {
 
     private val mUpdateCallback: ListUpdateCallback
     private val mConfig: AsyncDifferConfig<T>
@@ -72,7 +74,9 @@ open class NestedAsyncListDiffer<T>(val adapter: BaseNestedListAdapter<T,*, *>, 
                                         mList = newList
                                         mReadOnlyList = Collections.unmodifiableList(newList)
 
-                                        adapter.changePayloadOf(oldItemPosition)
+                                        if (adapter is BaseNestedListAdapter<T, *, *>) {
+                                            adapter.changePayloadOf(oldItemPosition)
+                                        }
                                     }
 
                                     mConfig.diffCallback.areContentsTheSame(oldItem, newItem)

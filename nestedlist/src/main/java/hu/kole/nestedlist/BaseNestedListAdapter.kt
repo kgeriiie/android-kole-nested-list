@@ -4,7 +4,7 @@ import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
 import android.view.View
 
-abstract class BaseNestedListAdapter<TMainData, TNestedData, TNestedViewHolder: BaseNestedListAdapter.BaseNestedViewHolder<TNestedData, TMainData>>(diffCallback: NestedItemCallback<TMainData>): ListAdapter<TMainData, TNestedViewHolder>(diffCallback) {
+abstract class BaseNestedListAdapter<TMainData, TNestedData, TViewHolder: RecyclerView.ViewHolder>(diffCallback: NestedItemCallback<TMainData>): ListAdapter<TMainData, TViewHolder>(diffCallback) {
 
     private var mRecyclerView: RecyclerView? = null
     @Suppress("LeakingThis")
@@ -17,12 +17,11 @@ abstract class BaseNestedListAdapter<TMainData, TNestedData, TNestedViewHolder: 
     }
 
     fun changePayloadOf(position: Int) {
-        findViewHolderForAdapterPosition(position)?.submitList(getNestedItems(position))
-    }
+        val viewHolder = mRecyclerView?.findViewHolderForAdapterPosition(position)
 
-    @Suppress("UNCHECKED_CAST")
-    private fun findViewHolderForAdapterPosition(position: Int): BaseNestedViewHolder<TNestedData, TMainData>? {
-        return mRecyclerView?.findViewHolderForAdapterPosition(position) as? TNestedViewHolder
+        if (viewHolder is BaseNestedViewHolder<*, *>) {
+            (viewHolder as BaseNestedViewHolder<TMainData, TNestedData>).nestedListAdapter.submitList(getNestedItems(position))
+        }
     }
 
     override fun submitList(list: List<TMainData>?) {
@@ -39,8 +38,8 @@ abstract class BaseNestedListAdapter<TMainData, TNestedData, TNestedViewHolder: 
         return mHelper.getCurrentList().size
     }
 
-    abstract class BaseNestedViewHolder<in TNestedData, in TMainData>(view: View): RecyclerView.ViewHolder(view) {
+    abstract class BaseNestedViewHolder<TMainData, TNestedData>(view: View): RecyclerView.ViewHolder(view) {
+        abstract val nestedListAdapter: ListAdapter<TNestedData, *>
         abstract fun setup(position: Int, section: TMainData?)
-        abstract fun submitList(list: List<TNestedData>)
     }
 }
