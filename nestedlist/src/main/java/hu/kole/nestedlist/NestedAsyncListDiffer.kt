@@ -97,7 +97,7 @@ open class NestedAsyncListDiffer<T>(val adapter: ListAdapter<T, *>, diffCallback
                             }
                         })
 
-                        mConfig.mainThreadExecutor.execute {
+                        mConfig.mainThreadExecutor?.execute {
                             if (mMaxScheduledGeneration == runGeneration) {
                                 latchList(newList, result)
                             }

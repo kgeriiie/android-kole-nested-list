@@ -31,7 +31,7 @@ android {
 publish {
     def groupProjectID = 'hu.kole.nestedlist'
     def artifactProjectID = 'nestedlist'
-    def publishVersionID = '0.1'
+    def publishVersionID = '0.2'
 
     userOrg = 'geriiie'
     repoName = 'KoleNestedList'
