@@ -43,5 +43,5 @@ In your *BaseNestedViewHolder* you have to setup the nested view holder's adapte
 # Download
 ### Gradle
 ```groovy
-implementation 'hu.kole.nestedlist:nestedlist:0.1'
+implementation 'hu.kole.nestedlist:nestedlist:0.3'
 ```

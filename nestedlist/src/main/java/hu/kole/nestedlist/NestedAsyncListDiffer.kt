@@ -97,6 +97,7 @@ open class NestedAsyncListDiffer<T>(val adapter: ListAdapter<T, *>, diffCallback
                             }
                         })
 
+                        @Suppress("UNNECESSARY_SAFE_CALL")
                         mConfig.mainThreadExecutor?.execute {
                             if (mMaxScheduledGeneration == runGeneration) {
                                 latchList(newList, result)
