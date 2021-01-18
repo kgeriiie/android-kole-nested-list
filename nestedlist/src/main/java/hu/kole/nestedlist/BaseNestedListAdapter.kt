@@ -24,7 +24,7 @@ abstract class BaseNestedListAdapter<TMainData, TNestedData, TViewHolder: Recycl
         }
     }
 
-    override fun submitList(list: List<TMainData>?) {
+    override fun submitList(list: MutableList<TMainData>?) {
         mHelper.submitList(list)
     }
 

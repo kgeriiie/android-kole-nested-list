@@ -1,4 +1,4 @@
-package hu.kole.test.adapter
+package hu.kole.test.kotlin.adapter
 
 import android.databinding.DataBindingUtil
 import android.support.v7.recyclerview.extensions.ListAdapter
